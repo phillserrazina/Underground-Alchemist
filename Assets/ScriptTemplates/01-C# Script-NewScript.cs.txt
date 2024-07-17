@@ -1,0 +1,15 @@
+using UnityEngine;
+
+namespace PJ
+{
+	public class #SCRIPTNAME# : MonoBehaviour 
+	{
+		// VARIABLES
+	
+		// EXECUTION FUNCTIONS
+	
+		// METHODS
+		
+		// CALLBACKS
+	}
+}
