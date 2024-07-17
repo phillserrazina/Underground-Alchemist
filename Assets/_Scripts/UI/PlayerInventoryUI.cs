@@ -12,7 +12,7 @@ namespace PJ.UI
         // EXECUTION FUNCTIONS
         private void Awake()
         {
-            var inventory = FindObjectOfType<PlayerInventory>();
+            var inventory = FindObjectOfType<PlayerInventoryManager>();
         }
 
         // CALLBACKS
