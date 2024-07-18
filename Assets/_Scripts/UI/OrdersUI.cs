@@ -10,7 +10,7 @@ namespace PJ.UI
 	{
 		// VARIABLES
 		[Title("References")]
-		[SerializeField] private GameObject orderUiPrefab;
+		[SerializeField] private OrderButtonUI orderUiPrefab;
         [SerializeField] private Transform contents;
 
         private bool hasBeenInitialized = false;
@@ -30,7 +30,8 @@ namespace PJ.UI
         // CALLBACKS
         private void OrdersManager_OnOrderReceived(Data.Order newOrder)
         {
-            Instantiate(orderUiPrefab, contents);
+            var spawnedOrderUI = Instantiate(orderUiPrefab, contents);
+            spawnedOrderUI.Initialize(newOrder);
         }
     }
 }

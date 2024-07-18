@@ -28,6 +28,8 @@ namespace PJ.UI
         private void OpenLetter(Order order)
 		{
             contents.gameObject.SetActive(true);
+
+            Debug.Log(order.ToString());
 		}
 
         public void CloseLetter()
