@@ -73,7 +73,7 @@ namespace PJ.UI
 
 			foreach (var ingredient in recipe.Ingredients)
 			{
-				result += "- " + ingredient.Name + ";\n";
+				result += "- " + ingredient.Name + " (Owned: " + PlayerInventoryManager.Instance.GetItemAmount(ingredient) + ");\n";
 			}
 
 			return result;
