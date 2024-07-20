@@ -19,6 +19,9 @@ namespace PJ.Data
 		[SerializeField] private string plantName = "";
         [SerializeField, Range(0.1f, 5f)] private float growthRate = 1f;
 
+		[Title("Growth Conditions")]
+		[SerializeField, MinMaxSlider(0f, 1f)] private Vector2 lightValues = new Vector2(0f, 1f);
+
         [Title("Harvest Products")]
         [SerializeField] private ItemSO[] harvestProducts;
 
@@ -28,7 +31,7 @@ namespace PJ.Data
 		// METHODS
         public bool MeetsConditionsToGrow(Vase vase)
 		{
-			return true;
+			return vase.CurrentLightLevel >= lightValues.x && vase.CurrentLightLevel <= lightValues.y;
 		}
 	}
 }

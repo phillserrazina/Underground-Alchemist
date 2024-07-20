@@ -29,7 +29,6 @@ namespace PJ.Utils
 			StopAnimation();
 			currentAnimation = targetAnimation;
 			currentAnimationCoroutine = StartCoroutine(PlayAnimationCoroutine(targetAnimation));
-			Debug.Log("Start new animation!");
         }
 
 		public void StopAnimation()
@@ -41,6 +40,7 @@ namespace PJ.Utils
 
 			StopCoroutine(currentAnimationCoroutine);
 			currentAnimationCoroutine = null;
+			currentAnimation = null;
 		}
 		
 		private IEnumerator PlayAnimationCoroutine(SpritesheetAnimation targetAnimation)

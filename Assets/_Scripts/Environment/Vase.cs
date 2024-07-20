@@ -3,6 +3,7 @@ using UnityEngine;
 using PJ.Data;
 using PJ.Utils;
 using PJ.Managers;
+using Sirenix.OdinInspector;
 
 namespace PJ.Environment
 {
@@ -11,6 +12,10 @@ namespace PJ.Environment
         // VARIABLES
         [SerializeField] private Canvas harvestCanvas;
         [SerializeField] private SpritesheetAnimator animator;
+
+        [SerializeField] private AnimationCurve lightLevels;
+
+        [ShowInInspector, ReadOnly] public float CurrentLightLevel => TimeManager.Instance == null ? 0f : lightLevels.Evaluate(TimeManager.Instance.CurrentDayPercentage);
 
         private PlantSO plantData;
 
