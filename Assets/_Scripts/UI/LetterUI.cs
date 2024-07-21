@@ -1,5 +1,8 @@
 using UnityEngine;
 
+using DG.Tweening;
+using Sirenix.OdinInspector;
+
 using PJ.Data;
 using PJ.Managers;
 
@@ -8,11 +11,24 @@ namespace PJ.UI
 	public class LetterUI : MonoBehaviour 
 	{
         // VARIABLES
+        [Title("References")]
         [SerializeField] private Transform contents;
 
-		private bool hasBeenInitialized = false;
+        [Title("Settings")]
+        [SerializeField] private float showPositionY = 30f;
+        [SerializeField] private float hidePositionY = -1000f;
+
+        private bool hasBeenInitialized = false;
+        private Order currentOrder = null;
 
         // EXECUTION FUNCTIONS
+        private void Awake()
+        {
+            Vector3 newPosition = contents.position;
+            newPosition.y = hidePositionY;
+            contents.position = newPosition;
+        }
+
         private void Update()
         {
             if (hasBeenInitialized || LetterManager.Instance == null)
@@ -27,14 +43,20 @@ namespace PJ.UI
         // METHODS
         private void OpenLetter(Order order)
 		{
-            contents.gameObject.SetActive(true);
+            if (currentOrder != null)
+            {
+                return;
+            }
 
-            Debug.Log(order.ToString());
-		}
+            contents.gameObject.SetActive(true);
+            contents.DOLocalMoveY(showPositionY, 0.25f);
+            currentOrder = order;
+        }
 
         public void CloseLetter()
         {
-            contents.gameObject.SetActive(false);
+            contents.DOLocalMoveY(hidePositionY, 0.25f);
+            DOVirtual.DelayedCall(0.25f, () => { currentOrder = null; });
         }
 
         // CALLBACKS
