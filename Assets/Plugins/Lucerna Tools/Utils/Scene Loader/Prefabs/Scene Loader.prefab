@@ -177,8 +177,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameplayScenes:
-  - Gameplay Logic Scene (Dynamic)
-  - Gameplay UI Scene (Dynamic)
+  - Gameplay (Dynamic)
+  - Gameplay UI (Dynamic)
   loadingScreenCanvas: {fileID: 5414697231289490370}
   loadingBarImage: {fileID: 4490624713242426293}
   loadDebugSceneOnAwake: 0

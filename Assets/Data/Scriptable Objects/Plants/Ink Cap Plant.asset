@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 261256bfa1103154893fee7ff723d9bf, type: 3}
+  m_Name: Ink Cap Plant
+  m_EditorClassIdentifier: 
+  plantName: Ink Cap
+  growthRate: 5
+  lightValues: {x: 0.65327287, y: 1}
+  harvestProducts:
+  - {fileID: 11400000, guid: 6b9bc4a98cc15d847b8019060a501733, type: 2}
+  - {fileID: 11400000, guid: 6b9bc4a98cc15d847b8019060a501733, type: 2}
+  - {fileID: 11400000, guid: 6b9bc4a98cc15d847b8019060a501733, type: 2}
+  animations:
+  - spritesheet:
+    - {fileID: -923695555, guid: 62d2d5f78963e7c43a75a0b38b935f59, type: 3}
+    - {fileID: 259037971, guid: 62d2d5f78963e7c43a75a0b38b935f59, type: 3}
+    - {fileID: 1757623578, guid: 62d2d5f78963e7c43a75a0b38b935f59, type: 3}
+    - {fileID: -537564568, guid: 62d2d5f78963e7c43a75a0b38b935f59, type: 3}
+  - spritesheet:
+    - {fileID: 1571166594, guid: 1a0afd823d851c240841841ebba6f970, type: 3}
+    - {fileID: 1560185677, guid: 1a0afd823d851c240841841ebba6f970, type: 3}
+    - {fileID: -72720278, guid: 1a0afd823d851c240841841ebba6f970, type: 3}
+    - {fileID: 874317688, guid: 1a0afd823d851c240841841ebba6f970, type: 3}
+  - spritesheet:
+    - {fileID: 1005420133, guid: 9f5bec3e17e5eb34289d07874f0951d1, type: 3}
+  - spritesheet:
+    - {fileID: -1070697861, guid: 624840647cd00834aa02d36ebf32606d, type: 3}

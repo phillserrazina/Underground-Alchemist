@@ -11,7 +11,7 @@ using PJ.Data;
 
 namespace PJ.Managers
 {
-	public class PlayerInventory : Singleton<PlayerInventory>
+	public class PlayerInventoryManager : Singleton<PlayerInventoryManager>
 	{
 		// VARIABLES
 		[SerializeField] private int startingMoney = 5;

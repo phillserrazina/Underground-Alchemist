@@ -4,6 +4,7 @@ using DG.Tweening;
 using Sirenix.OdinInspector;
 
 using Lucerna.Common.Singletons;
+using PJ.Managers;
 
 namespace PJ.UI
 {
@@ -17,7 +18,7 @@ namespace PJ.UI
 		[SerializeField] private float showPositionY = 30f;
 		[SerializeField] private float hidePositionY = -1000f;
 
-        private bool isCurrentlyShowing = false;
+        public bool IsCurrentlyShowing { get; private set; } = false;
 
         private float currentTriggerCooldown = 0f;
 
@@ -48,9 +49,11 @@ namespace PJ.UI
 
             float triggerCooldown = 0.25f;
 
-            isCurrentlyShowing = !isCurrentlyShowing;
-            contents.DOLocalMoveY(isCurrentlyShowing ? showPositionY : hidePositionY, triggerCooldown);
+            IsCurrentlyShowing = !IsCurrentlyShowing;
+            contents.DOLocalMoveY(IsCurrentlyShowing ? showPositionY : hidePositionY, triggerCooldown);
             currentTriggerCooldown = triggerCooldown;
+
+            FindObjectOfType<LetterUI>().CloseLetter();
         }
     }
 }

@@ -32,7 +32,7 @@ namespace PJ.UI
 				UpdateInformation(debugData);
 			}
 
-            PlayerInventory.Instance.OnInventoryChanged += PlayerInventory_OnInventoryChanged;
+            PlayerInventoryManager.Instance.OnInventoryChanged += PlayerInventory_OnInventoryChanged;
         }
 
         private void PlayerInventory_OnInventoryChanged(System.Collections.Generic.Dictionary<ItemSO, int> dictionary)
@@ -50,10 +50,10 @@ namespace PJ.UI
 		{
             foreach (var ingredient in currentRecipe.Ingredients)
             {
-				PlayerInventory.Instance.RemoveItem(ingredient);
+				PlayerInventoryManager.Instance.RemoveItem(ingredient);
             }
 
-			PlayerInventory.Instance.AddItem(currentRecipe.Result);
+			PlayerInventoryManager.Instance.AddItem(currentRecipe.Result);
         }
 
         public void UpdateInformation(RecipeSO recipe)
@@ -62,9 +62,9 @@ namespace PJ.UI
 
 			recipeNameText.text = recipe.Name;
 			ingredientsText.text = GetIngredientsText(recipe);
-			ownedAmountText.text = "Owned: " + PlayerInventory.Instance.GetItemAmount(recipe.Result);
+			ownedAmountText.text = "Owned: " + PlayerInventoryManager.Instance.GetItemAmount(recipe.Result);
 
-			craftButton.interactable = PlayerInventory.Instance.CanCraftRecipe(recipe);
+			craftButton.interactable = PlayerInventoryManager.Instance.CanCraftRecipe(recipe);
 		}
 
 		private string GetIngredientsText(RecipeSO recipe)
@@ -73,7 +73,7 @@ namespace PJ.UI
 
 			foreach (var ingredient in recipe.Ingredients)
 			{
-				result += "- " + ingredient.Name + ";\n";
+				result += "- " + ingredient.Name + " (Owned: " + PlayerInventoryManager.Instance.GetItemAmount(ingredient) + ");\n";
 			}
 
 			return result;

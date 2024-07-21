@@ -49,13 +49,7 @@ namespace Lucerna.Utils
         // METHODS
         public void LoadGameplayScene(string sceneName, List<string> additionalScenes = null)
 		{
-            void loadGameplaySceneAction() => LoadGameplaySceneAction(sceneName + " (Static)", sceneName + " (Dynamic)", additionalScenes);
-            StartCoroutine(LoadCoroutine(loadGameplaySceneAction));
-        }
-
-		public void LoadGameplayScene(string staticSceneName, string dynamicSceneName, List<string> additionalScenes = null)
-		{
-            void loadGameplaySceneAction() => LoadGameplaySceneAction(staticSceneName, dynamicSceneName, additionalScenes);
+            void loadGameplaySceneAction() => LoadGameplaySceneAction(sceneName + " (Static)", additionalScenes);
             StartCoroutine(LoadCoroutine(loadGameplaySceneAction));
         }
 
@@ -100,10 +94,9 @@ namespace Lucerna.Utils
 			}
         }
 
-        private void LoadGameplaySceneAction(string staticSceneName, string dynamicSceneName, List<string> additionalScenes = null)
+        private void LoadGameplaySceneAction(string staticSceneName, List<string> additionalScenes = null)
         {
             scenesToLoad.Add(SceneManager.LoadSceneAsync(staticSceneName, LoadSceneMode.Single));
-            scenesToLoad.Add(SceneManager.LoadSceneAsync(dynamicSceneName, LoadSceneMode.Additive));
 
             foreach (var scene in gameplayScenes)
             {
