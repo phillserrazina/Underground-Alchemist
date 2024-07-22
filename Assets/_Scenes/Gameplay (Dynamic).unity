@@ -318,7 +318,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.1
+  m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 0000000023f3e00e
@@ -368,11 +368,11 @@ MonoBehaviour:
   targetLight: {fileID: 380451336}
   lightGradient:
     serializedVersion: 2
-    key0: {r: 1, g: 0.90760267, b: 0.8254717, a: 1}
-    key1: {r: 0.8773585, g: 0.8625142, b: 0.45937166, a: 1}
+    key0: {r: 1, g: 0.90760267, b: 0.8254717, a: 0.8627451}
+    key1: {r: 0.8773585, g: 0.8625142, b: 0.45937166, a: 0.84313726}
     key2: {r: 0.8113208, g: 0.6263024, b: 0.38652548, a: 0}
     key3: {r: 0.2285066, g: 0.4282623, b: 0.745283, a: 0}
-    key4: {r: 0.14711641, g: 0.19871593, b: 0.5471698, a: 1}
+    key4: {r: 0.14711641, g: 0.19871593, b: 0.5471698, a: 0.8627451}
     key5: {r: 1, g: 1, b: 1, a: 0}
     key6: {r: 0, g: 0, b: 0, a: 0}
     key7: {r: 0, g: 0, b: 0, a: 0}
@@ -384,9 +384,9 @@ MonoBehaviour:
     ctime5: 65535
     ctime6: 0
     ctime7: 0
-    atime0: 0
+    atime0: 193
     atime1: 10216
-    atime2: 30455
+    atime2: 20432
     atime3: 58018
     atime4: 65535
     atime5: 0
@@ -1003,7 +1003,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.1
+  m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 0000000023f3e00e
@@ -1053,7 +1053,7 @@ MonoBehaviour:
     serializedVersion: 2
     key0: {r: 0.9245283, g: 0.91751814, b: 0.73700607, a: 0}
     key1: {r: 1, g: 0.9363644, b: 0.8537736, a: 1}
-    key2: {r: 0.2285066, g: 0.4282623, b: 0.745283, a: 0.890026}
+    key2: {r: 0.2285066, g: 0.4282623, b: 0.745283, a: 0.972549}
     key3: {r: 0.14711641, g: 0.19871593, b: 0.5471698, a: 0}
     key4: {r: 1, g: 0.47058824, b: 0, a: 0}
     key5: {r: 1, g: 0.47058824, b: 0, a: 0}
@@ -1067,10 +1067,10 @@ MonoBehaviour:
     ctime5: 65535
     ctime6: 0
     ctime7: 0
-    atime0: 0
+    atime0: 4626
     atime1: 9830
     atime2: 25636
-    atime3: 44718
+    atime3: 34502
     atime4: 65535
     atime5: 0
     atime6: 0
@@ -1690,7 +1690,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.1
+  m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 0000000023f3e00e
@@ -1742,8 +1742,8 @@ MonoBehaviour:
     serializedVersion: 2
     key0: {r: 0.9056604, g: 0.8981545, b: 0.7048772, a: 0.095268965}
     key1: {r: 0.9622642, g: 0.8220181, b: 0.63999647, a: 0.13940266}
-    key2: {r: 0.2285066, g: 0.4282623, b: 0.745283, a: 1}
-    key3: {r: 0.14711641, g: 0.19871593, b: 0.5471698, a: 1}
+    key2: {r: 0.2285066, g: 0.4282623, b: 0.745283, a: 0.8117647}
+    key3: {r: 0.14711641, g: 0.19871593, b: 0.5471698, a: 0.7764706}
     key4: {r: 1, g: 0.47058824, b: 0, a: 0}
     key5: {r: 1, g: 0.47058824, b: 0, a: 0}
     key6: {r: 0, g: 0, b: 0, a: 0}
@@ -1757,10 +1757,10 @@ MonoBehaviour:
     ctime6: 0
     ctime7: 0
     atime0: 0
-    atime1: 14071
-    atime2: 23708
+    atime1: 17733
+    atime2: 24094
     atime3: 26792
-    atime4: 35852
+    atime4: 34502
     atime5: 65535
     atime6: 0
     atime7: 0
