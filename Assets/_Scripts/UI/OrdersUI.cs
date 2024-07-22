@@ -3,6 +3,8 @@ using UnityEngine;
 using Sirenix.OdinInspector;
 
 using PJ.Managers;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace PJ.UI
 {
@@ -12,6 +14,8 @@ namespace PJ.UI
 		[Title("References")]
 		[SerializeField] private OrderButtonUI orderUiPrefab;
         [SerializeField] private Transform contents;
+
+        private List<OrderButtonUI> spawnedOrderUIs = new();
 
         private bool hasBeenInitialized = false;
 
@@ -24,6 +28,8 @@ namespace PJ.UI
             }
 
             OrdersManager.Instance.OnOrderReceived += OrdersManager_OnOrderReceived;
+            OrdersManager.Instance.OnOrderCompleted += OrdersManager_OnOrderCompleted;
+
             hasBeenInitialized = true;
         }
 
@@ -32,6 +38,15 @@ namespace PJ.UI
         {
             var spawnedOrderUI = Instantiate(orderUiPrefab, contents);
             spawnedOrderUI.Initialize(newOrder);
+            spawnedOrderUIs.Add(spawnedOrderUI);
+        }
+
+        private void OrdersManager_OnOrderCompleted(Data.Order completedOrder)
+        {
+            var targetOrderUI = spawnedOrderUIs.FirstOrDefault(orderUI => orderUI.AssignedOrder == completedOrder);
+
+            spawnedOrderUIs.Remove(targetOrderUI);
+            Destroy(targetOrderUI.gameObject);
         }
     }
 }

@@ -32,5 +32,11 @@ MonoBehaviour:
     - {fileID: 874317688, guid: 1a0afd823d851c240841841ebba6f970, type: 3}
   - spritesheet:
     - {fileID: 1005420133, guid: 9f5bec3e17e5eb34289d07874f0951d1, type: 3}
+    - {fileID: 582190973, guid: 9f5bec3e17e5eb34289d07874f0951d1, type: 3}
+    - {fileID: -182136967, guid: 9f5bec3e17e5eb34289d07874f0951d1, type: 3}
+    - {fileID: 82842188, guid: 9f5bec3e17e5eb34289d07874f0951d1, type: 3}
   - spritesheet:
     - {fileID: -1070697861, guid: 624840647cd00834aa02d36ebf32606d, type: 3}
+    - {fileID: -1358876665, guid: 624840647cd00834aa02d36ebf32606d, type: 3}
+    - {fileID: -1933782853, guid: 624840647cd00834aa02d36ebf32606d, type: 3}
+    - {fileID: -589678166, guid: 624840647cd00834aa02d36ebf32606d, type: 3}

@@ -7,7 +7,27 @@ namespace PJ.Data
 	public class Order 
 	{
 		// VARIABLES
-		public ItemSO[] OrderedItems => itemList.ToArray();
+		public Dictionary<ItemSO, int> OrderedItems
+		{
+			get
+			{
+				var dictionary = new Dictionary<ItemSO, int>();
+
+				foreach (var item in itemList)
+				{
+					if (dictionary.ContainsKey(item))
+					{
+						dictionary[item]++;
+					}
+					else
+					{
+						dictionary.Add(item, 1);
+					}
+				}
+
+				return dictionary;
+			}
+		}
 	
 		private readonly List<ItemSO> itemList = new();
 

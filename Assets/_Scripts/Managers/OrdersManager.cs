@@ -16,9 +16,10 @@ namespace PJ.Managers
 
 		private float currentOrderTimer = 0f;
 
-		public event Action<Order> OnOrderReceived;
-
         private List<Order> currentOrders = new();
+
+		public event Action<Order> OnOrderReceived;
+		public event Action<Order> OnOrderCompleted;
 
         // EXECUTION FUNCTIONS
         private void Start()
@@ -40,11 +41,17 @@ namespace PJ.Managers
         private void ReceiveOrder()
         {
             Order newOrder = new Order.Builder().Build();
+
             currentOrders.Add(newOrder);
-            
             OnOrderReceived?.Invoke(newOrder);
 
             currentOrderTimer = orderRate;
+        }
+
+        public void CompleteOrder(Order orderToComplete)
+        {
+            currentOrders.Remove(orderToComplete);
+            OnOrderCompleted?.Invoke(orderToComplete);
         }
     }
 }

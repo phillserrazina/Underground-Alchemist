@@ -1,27 +1,24 @@
+using UnityEngine;
+
 using PJ.Data;
 using PJ.Managers;
-using UnityEngine;
 
 namespace PJ.UI
 {
 	public class OrderButtonUI : MonoBehaviour 
 	{
 		// VARIABLES
-		private Order assignedOrder;
-	
-		// EXECUTION FUNCTIONS
+		public Order AssignedOrder { get; private set; }
 	
 		// METHODS
 		public void Initialize(Order order)
 		{
-			assignedOrder = order;
+			AssignedOrder = order;
 		}
 
 		public void OnClick()
 		{
-			LetterManager.Instance.OpenOrder(assignedOrder);
+			LetterManager.Instance.OpenOrder(AssignedOrder);
 		}
-		
-		// CALLBACKS
 	}
 }

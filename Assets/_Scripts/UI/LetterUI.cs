@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 using DG.Tweening;
 using Sirenix.OdinInspector;
@@ -13,6 +15,11 @@ namespace PJ.UI
         // VARIABLES
         [Title("References")]
         [SerializeField] private Transform contents;
+        [SerializeField] private Button deliverButton;
+
+        [Space(5)]
+        [SerializeField] private TMP_Text titleText;
+        [SerializeField] private TMP_Text descriptionText;
 
         [Title("Settings")]
         [SerializeField] private float showPositionY = 30f;
@@ -48,6 +55,24 @@ namespace PJ.UI
                 return;
             }
 
+            descriptionText.text = "Description" + "\n\n";
+
+            descriptionText.text += "----- ORDER -----\n";
+
+            bool valid = true;
+
+            foreach (var pair in order.OrderedItems)
+            {
+                descriptionText.text += "- " + pair.Key.Name + " x" + pair.Value + ";\n";
+
+                if (PlayerInventoryManager.Instance.GetItemAmount(pair.Key) < pair.Value)
+                {
+                    valid = false;
+                }
+            }
+
+            deliverButton.interactable = valid;
+
             contents.gameObject.SetActive(true);
             contents.DOLocalMoveY(showPositionY, 0.25f);
             currentOrder = order;
@@ -57,6 +82,16 @@ namespace PJ.UI
         {
             contents.DOLocalMoveY(hidePositionY, 0.25f);
             DOVirtual.DelayedCall(0.25f, () => { currentOrder = null; });
+        }
+
+        public void DeliverButton()
+        {
+            OrdersManager.Instance.CompleteOrder(currentOrder);
+
+            PlayerInventoryManager.Instance.AddMoney(100);
+
+            CloseLetter();
+            currentOrder = null;
         }
 
         // CALLBACKS
