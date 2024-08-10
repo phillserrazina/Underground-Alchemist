@@ -1,10 +1,11 @@
+using System.Linq;
+using System.Collections.Generic;
+
 using UnityEngine;
 
 using Sirenix.OdinInspector;
 
 using PJ.Managers;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace PJ.UI
 {
